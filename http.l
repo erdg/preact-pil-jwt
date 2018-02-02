@@ -1,10 +1,18 @@
-# 14sep17abu
-# (c) Software Lab. Alexander Burger
+# 02feb18edg
+
+# adapted from the picoLisp distribution
+
+# captures the 'Authorization' header to allow parsing of Json 
+# Web Tokens (JWT).
+
+# '_htHead' sets *JWT for each request. *JWT is cleared on each
+# new request by 'http'.
 
 # *HPorts *Home *Gate *Host *Port *Port1 *Port% *Http1 *Chunked
 # *Sock *Agent *ContL *ContLen *MPartLim *MPartEnd "*HtSet"
 # *Post *Url *Timeout *SesAdr *SesId *ConId
 # *Referer *Cookies "*Cookies"
+# *JWT
 
 (default
    *HPorts 0
@@ -158,7 +166,7 @@
 # Handle HTTP-Transaction
 (de http (*HtSock)
    (use (*Post U L @X)
-      (off *Post *Port% *ContL *ContLen *Cookies "*Cookies" "*HtSet")
+      (off *Post *Port% *ContL *ContLen *Cookies "*Cookies" "*HtSet" *JWT)
       (catch 'http
          (in *HtSock
             (case (till " " T)
