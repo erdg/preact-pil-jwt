@@ -262,7 +262,7 @@
                   *MPartLim (append '(- -) (cdr (line)))
                   *MPartEnd (append *MPartLim '(- -)) )
                (line) ) )
-         ("authorization:" (setq *JWT (cdr (line))))
+         ("authorization:" (setq *JWT (pack (stem (chop (cdr (line))) " "))))
          ("x-pil:"
             (char)
             (when (till "=")

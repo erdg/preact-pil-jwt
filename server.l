@@ -1,11 +1,15 @@
-(load "http.l" "json.l")
+(load "preact-pil-jwt/http.l" "lib/json.l")
 
-(de respondJson (Lst)
-   (let Json (json~encode Lst)
-      (http1 "application/json" 0)
-      (prinl "Access-Control-Allow-Origin: *^M")
-      (prinl "Content-Length: " (size Json) "^M^J^M")
-      (prin Json) ) )
+(de respondJson (Data)
+   (let Json (in (pipe (printJson Data)) (line T))
+      (ht:Out NIL
+         (prinl "HTTP/1.0 200 OK^M")
+         (prinl "access-control-allow-origin: *^M")
+         (prinl "access-control-allow-headers: accept, content-type^M")
+         (prinl "Content-Type: application/json^M")
+         (prinl "Content-Length: " (+ 1 (length Json)) "^M")
+         (prinl "^M")
+         (prinl Json) ) ) )
 
 (de getRequestJWT ()
    (out 2 (prinl "JWT: " *JWT))
