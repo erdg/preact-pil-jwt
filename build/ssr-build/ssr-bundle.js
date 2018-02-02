@@ -1534,6 +1534,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+// don't get excited, not a real token
 __WEBPACK_IMPORTED_MODULE_2_axios___default.a.defaults.headers.common['Authorization'] = 'Bearer ' + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ';
 
 var App = function (_Component) {
@@ -1549,7 +1550,7 @@ var App = function (_Component) {
       }
 
       return _ret = (_temp = (_this = _possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.getRequestJWT = function () {
-         __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('http://localhost:4040/!getRequestJWT').then(function (r) {
+         __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('https://erikdgustafson.com/preact-pil-jwt/!getRequestJWT').then(function (r) {
             return console.log(r);
          });
       }, _temp), _possibleConstructorReturn(_this, _ret);
