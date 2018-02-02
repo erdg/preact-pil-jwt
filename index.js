@@ -7,7 +7,7 @@ axios.defaults.headers.common['Authorization'] = 'Bearer ' + 'eyJhbGciOiJIUzI1Ni
 export default class App extends Component {
 
    getRequestJWT = () => {
-      axios.get('http://localhost:4040/!getRequestJWT')
+      axios.get('http://localhost:4040/preact-pil-jwt/!getRequestJWT')
          .then( r => console.log(r) )
    }
 
