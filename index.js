@@ -12,15 +12,15 @@ export default class App extends Component {
          .then( r => console.log(r) )
    }
 
-	render() {
-		return (
-			<div>
+   render() {
+      return (
+         <div>
             <button
                onClick={this.getRequestJWT}
             >
                Send JWT to PL in HTTP Header
             </button>
-			</div>
-		);
-	}
+         </div>
+      );
+   }
 }
